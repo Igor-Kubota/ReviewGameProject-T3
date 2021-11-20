@@ -157,7 +157,7 @@ class Location {
         ? new Coordinates.fromJson(json['coordinates'])
         : null;
     timezone = json['timezone'] != null
-        ? Timezone.fromJson(json['timezone'])
+        ? new Timezone.fromJson(json['timezone'])
         : null;
   }
 

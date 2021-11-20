@@ -1,17 +1,18 @@
 package br.com.imt.routes
 
-import br.com.imt.JwtConfig
-import br.com.imt.dto.*
+import br.com.imt.dto.CreateUserDTO
+import br.com.imt.dto.LoginDTO
+import br.com.imt.dto.UpdateUserDTO
 import br.com.imt.interfaces.IServiceUser
-import br.com.imt.models.User
-import com.auth0.jwt.JWT
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.auth.jwt.*
 import io.ktor.http.*
+import io.ktor.http.content.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import java.io.File
 
 fun Route.userRouting(service: IServiceUser){
     route("/user"){
@@ -25,10 +26,13 @@ fun Route.userRouting(service: IServiceUser){
             service.insert(obj)
             call.respondText("User stored correctly", status = HttpStatusCode.Created)
         }
+
        authenticate("auth-user") {
             put {
+                val principal = call.principal<JWTPrincipal>()
+                val id =principal!!.payload.getClaim("id").toString()
                 val obj = call.receive<UpdateUserDTO>()
-                service.update(obj)
+                service.update(obj, id)
                 call.respondText("Game update correctly", status = HttpStatusCode.OK)
             }
             get{
@@ -47,7 +51,7 @@ fun Route.userRouting(service: IServiceUser){
                 val principal = call.principal<JWTPrincipal>()
                 val id =principal!!.payload.getClaim("id").toString()
                 service.delete(id)
-                call.respondText("Game delete correctly", status = HttpStatusCode.NoContent)
+                call.respondText("User delete correctly", status = HttpStatusCode.NoContent)
             }
        }
         authenticate("auth-manager"){
@@ -71,7 +75,7 @@ fun Route.userRouting(service: IServiceUser){
                     status = HttpStatusCode.BadRequest
                 )
                 service.delete(id)
-                call.respondText("Game delete correctly", status = HttpStatusCode.NoContent)
+                call.respondText("User delete correctly", status = HttpStatusCode.NoContent)
             }
        }
 
