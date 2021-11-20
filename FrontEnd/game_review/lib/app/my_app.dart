@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_review/app/screens/home_page.dart';
+import 'package:game_review/app/screens/minha_lista_dinamica.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         
         //brightness: Brightness.dark
       ),
-      home:const HomePage(),
+      home:const MinhaListaDinamica(),
       debugShowCheckedModeBanner: false,
     );
   }
