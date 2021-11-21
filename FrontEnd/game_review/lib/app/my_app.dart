@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
           secondary: const Color(0XFF1F1B24),
           surface: Colors.deepPurple
         ),
-      
         
         //brightness: Brightness.dark
       ),

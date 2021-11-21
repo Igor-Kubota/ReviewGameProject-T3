@@ -3,6 +3,7 @@ import 'package:game_review/app/models/game.dart';
 import 'package:game_review/app/models/network_helper.dart';
 import 'package:game_review/app/models/pessoa.dart';
 import 'package:game_review/app/models/random_user.dart';
+import 'package:game_review/app/screens/game_page1.dart';
 
 class MinhaListaDinamica extends StatefulWidget {
   const MinhaListaDinamica({ Key? key }) : super(key: key);
@@ -30,11 +31,20 @@ class _MinhaListaDinamicaState extends State<MinhaListaDinamica> {
         itemBuilder: (context, itemIndex){
           return ListTile(
             title: Text("${pessoas[itemIndex].nome}"),
-            leading: Image.network("${pessoas[itemIndex].url}"),
+            leading: TextButton(
+              child: Image.network("${pessoas[itemIndex].url}", fit: BoxFit.contain),
+              
+              onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => MinhaListaDinamica()));
+              }
+            )
+            ,
             subtitle: Text("${pessoas[itemIndex].subText}"),
           ); 
         },
       ),  
+    
       floatingActionButton: FloatingActionButton(
         onPressed: ()async{
           NetworkHelper helper = NetworkHelper(url:"http://localhost:8080/games");
