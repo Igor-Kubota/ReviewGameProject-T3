@@ -16,7 +16,8 @@ class _MinhaListaDinamicaState extends State<MinhaListaDinamica> {
 
   List<Pessoa> pessoas = [Pessoa(nome: "Pikachu", url: "https://pbs.twimg.com/media/FEaCjohXIAQPVgl?format=jpg&name=small", subText: "Elétrico"),
 
-  Pessoa(nome: "Raichu", url: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png", subText: "Elétrico"),
+  Pessoa(nome: "Raichu",
+   url: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png", subText: "Elétrico"),
   
   Pessoa(nome: "Sandchurew", url: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png", subText: "Terrestre"),
   
