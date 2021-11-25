@@ -1,93 +1,103 @@
 import 'package:flutter/material.dart';
-import 'package:game_review/app/screens/game_page1.dart';
-import 'package:game_review/app/screens/minha_lista_dinamica.dart';
+import 'package:game_review/app/models/pessoa.dart';
+import 'package:game_review/app/screens/game_pages/game_page1.dart';
 
+import 'game_pages/game_page2.dart';
+import 'game_pages/game_page3.dart';
+import 'game_pages/game_page4.dart';
 
 class HomePage extends StatelessWidget {
- HomePage({ Key? key }) : super(key: key);
+   HomePage({Key? key}) : super(key: key);
 
+  final List<Pessoa> pessoas = [
+  Pessoa(nome: "God Of War", 
+         url: "assets/images/God_of_war_capa_v1.png"),
 
+  Pessoa(nome: "Karen",
+         url: "assets/images/hitman_capa_v1.png",),
+  
+  Pessoa(nome: "Nano", 
+         url: "assets/images/God_of_war_capa_v1.png"),
+
+  Pessoa(nome: "Komari", 
+         url: "assets/images/God_of_war_capa_v1.png"),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Game Review"),
+        title: const Text('Home Page - Game'),
       ),
-      body:
 
-      ListView(
-        children: [
-          ListTile(
-            title: const Text("God Of War"),
-            dense: true,
-            visualDensity: VisualDensity(vertical: 3),
-            leading: TextButton(
-              child: Image.network("https://upload.wikimedia.org/wikipedia/pt/8/82/God_of_War_2018_capa.png",fit: BoxFit.fill,),
-              
-              onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => MinhaListaDinamica()));
-              }
-            ),
-            
-            subtitle: const Text("Sony"),
-          ),
-          
-          ListTile(
-            title: Text("HitMan"),
-            dense: true,
-            visualDensity: VisualDensity(vertical: 3), 
-            leading: TextButton(
-              style: TextButton.styleFrom(fixedSize: Size.fromHeight(500)),
 
-              child: Image.network("https://upload.wikimedia.org/wikipedia/pt/1/1e/Hitman_2016_capa.png", fit: BoxFit.contain,),
-
-              onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => GamePage1()));
-              }
-            ),
-            
-            subtitle: Text("Sony"),
-          ),
-        ],
-      ),    
-    );
-  }
-}
-
- /*
-
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kindacode.com'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-
-        
-        children: GridView.builder(
+        child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
-                childAspectRatio: 3 / 2,
+                childAspectRatio: 2 / 3,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20),
-            itemCount: myProducts.length,
+            itemCount: pessoas.length,
             itemBuilder: (BuildContext ctx, index) {
+
               return Container(
-                alignment: Alignment.center,
-                child: Text(myProducts[index]["name"]),
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(15)),
-              );
+          alignment: Alignment.center,
+          child: Material(
+            color: Colors.blueGrey,
+            elevation: 8,
+            borderRadius: BorderRadius.circular(28),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            
+            child: InkWell(
+              splashColor: Colors.black26,
+              onTap: (){
+                if(index == 0){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const GamePage1()));
+                }else if(index == 1){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const GamePage2()));
+                }else if(index == 2){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const GamePage3()));
+                }else if(index == 3){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const GamePage4()));
+               }else{
+                 Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const GamePage1()));
+               }
+
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(child:
+                  Ink.image(
+                    image: AssetImage("${pessoas[index].url}"),
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                  const SizedBox(height: 6),
+                  Text(
+                    "${pessoas[index].nome}",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  const SizedBox(height: 3),
+                ]
+                
+            ),
+          ),
+        ),      
+      );
             }),
       ),
     );
   }
 }
-*/
+
