@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   Pessoa(nome: "God Of War", 
          url: "assets/images/God_of_war_capa_v1.png"),
 
-  Pessoa(nome: "Karen",
+  Pessoa(nome: "Hitman",
          url: "assets/images/hitman_capa_v1.png",),
   
   Pessoa(nome: "Nano", 
@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page - Game'),
+        title: const Text('Home Page - Projeto Game Review'),
       ),
 
 
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
               return Container(
           alignment: Alignment.center,
           child: Material(
-            color: Colors.blueGrey,
+            color: Colors.cyan.shade900,
             elevation: 8,
             borderRadius: BorderRadius.circular(28),
             clipBehavior: Clip.antiAliasWithSaveLayer,
