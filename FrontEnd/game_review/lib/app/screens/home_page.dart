@@ -26,7 +26,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+      decoration: const  BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0XFF0d324d),
+            Color(0XFF000000)
+          ],
+        ),
+      ), 
+
+    child: Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: const Text('Home Page - Projeto Game Review'),
       ),
@@ -77,26 +90,32 @@ class HomePage extends StatelessWidget {
                 children: [
                   Expanded(child:
                   Ink.image(
-                    image: AssetImage("${pessoas[index].url}"),
+                    image: AssetImage(
+                      pessoas[index].url
+                    ),
                     height: 200,
                     width: 200,
                     fit: BoxFit.cover,
+                    ),
                   ),
-                ),
                   const SizedBox(height: 6),
                   Text(
-                    "${pessoas[index].nome}",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    pessoas[index].nome,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.white
+                      ),
                   ),
                   const SizedBox(height: 3),
-                ]
-                
+                ]  
+              ),
             ),
+          ),      
+        );
+            }
           ),
-        ),      
-      );
-            }),
-      ),
+       ),
+      )
     );
   }
 }
