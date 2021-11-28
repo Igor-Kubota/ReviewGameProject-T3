@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_review/app/models/pessoa.dart';
 import 'package:game_review/app/screens/game_pages/game_page1.dart';
-
 import 'game_pages/game_page2.dart';
 import 'game_pages/game_page3.dart';
 import 'game_pages/game_page4.dart';
