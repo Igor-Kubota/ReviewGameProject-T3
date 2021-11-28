@@ -88,7 +88,7 @@ class LoginPageState extends State<LoginPage> {
                           const Icon(
                             Icons.person,
                             color: Colors.white,
-                            size: 33,
+                            size: 34,
                           ),
                           "Username"),
                     ),
@@ -97,7 +97,7 @@ class LoginPageState extends State<LoginPage> {
                           const Icon(
                             Icons.lock,
                             color: Colors.white,
-                            size: 33,
+                            size: 34,
                           ),
                           "Password"),
                     ),
