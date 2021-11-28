@@ -46,7 +46,7 @@ class LoginPageState extends State<LoginPage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: Colors.lightBlueAccent,
+        color: Colors.cyan.shade600,
         child: Stack(
           children: <Widget>[
             Align(

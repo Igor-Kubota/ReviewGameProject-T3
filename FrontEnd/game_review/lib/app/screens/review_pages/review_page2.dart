@@ -30,7 +30,9 @@ class _ReviewPage2State extends State<ReviewPage2> {
       ), 
     child: Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: AppBar(title: const Text("Reviewsa"),),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Reviews"),),
       body: ListView.builder(
         itemCount: reviews.length,
         itemBuilder: (context, itemIndex){

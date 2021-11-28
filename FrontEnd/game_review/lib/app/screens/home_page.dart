@@ -40,6 +40,7 @@ class HomePage extends StatelessWidget {
     child: Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Home Page - Projeto Game Review'),
       ),
 

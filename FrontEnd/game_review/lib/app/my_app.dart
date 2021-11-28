@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
 */
       theme: ThemeData(
         colorScheme: const ColorScheme.dark().copyWith(
-          primary: Colors.lightBlueAccent.shade400 ,
+          primary: Colors.cyan.shade900 ,
           secondary: const Color(0XFF1F1B24),
-          surface: Colors.lightBlueAccent.shade400
+          surface: Colors.cyan.shade900
         ),
       ),
       home:const LoginPage(),
