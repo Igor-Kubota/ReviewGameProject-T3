@@ -3,14 +3,14 @@ import 'package:game_review/app/models/network_helper.dart';
 import 'package:game_review/app/models/review_game_json.dart';
 
 
-class ReviewPage2 extends StatefulWidget {
-  const ReviewPage2({ Key? key }) : super(key: key);
+class ReviewPage3 extends StatefulWidget {
+  const ReviewPage3({ Key? key }) : super(key: key);
 
   @override
-  State<ReviewPage2> createState() => _ReviewPage2State();
+  State<ReviewPage3> createState() => _ReviewPage3State();
 }
 
-class _ReviewPage2State extends State<ReviewPage2> {
+class _ReviewPage3State extends State<ReviewPage3> {
   List<Review> reviews = [];
   var _firstPress = true;
   
@@ -30,7 +30,7 @@ class _ReviewPage2State extends State<ReviewPage2> {
       ), 
     child: Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: AppBar(title: const Text("Reviewsa"),),
+      appBar: AppBar(title: const Text("Reviews"),),
       body: ListView.builder(
         itemCount: reviews.length,
         itemBuilder: (context, itemIndex){
@@ -62,7 +62,7 @@ class _ReviewPage2State extends State<ReviewPage2> {
         onPressed: () async {
           if(_firstPress){
             _firstPress = false ;
-          NetworkHelper helper = NetworkHelper(url:"http://localhost:8080/games/3");
+          NetworkHelper helper = NetworkHelper(url:"http://localhost:8080/games/4");
           ReviewGameJson randomUsers = ReviewGameJson.fromJson(await helper.getData());
           //Colocar mais usuários
           randomUsers.reviews!.forEach((element) {
