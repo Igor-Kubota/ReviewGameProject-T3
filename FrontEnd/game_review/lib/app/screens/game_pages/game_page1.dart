@@ -42,7 +42,7 @@ class _GamePage1State extends State<GamePage1> {
     child: Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: const Text("Game Review"),
+        title: const Text("Game Details"),
       ),
 
 
