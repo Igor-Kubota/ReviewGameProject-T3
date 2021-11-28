@@ -16,11 +16,11 @@ class HomePage extends StatelessWidget {
   Pessoa(nome: "Hitman",
          url: "assets/images/hitman_capa_v1.png",),
   
-  Pessoa(nome: "Nano", 
-         url: "assets/images/God_of_war_capa_v1.png"),
+  Pessoa(nome: "Minecraft", 
+         url: "assets/images/minecraft_capa_v1.png"),
 
-  Pessoa(nome: "Komari", 
-         url: "assets/images/God_of_war_capa_v1.png"),
+  Pessoa(nome: "Cyberpunk 2077", 
+         url: "assets/images/cyberpunk_2077_capa_v1.png"),
 
   ];
 
