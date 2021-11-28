@@ -88,6 +88,7 @@ class LoginPageState extends State<LoginPage> {
                           const Icon(
                             Icons.person,
                             color: Colors.white,
+                            size: 33,
                           ),
                           "Username"),
                     ),
@@ -96,6 +97,7 @@ class LoginPageState extends State<LoginPage> {
                           const Icon(
                             Icons.lock,
                             color: Colors.white,
+                            size: 33,
                           ),
                           "Password"),
                     ),
@@ -107,7 +109,7 @@ class LoginPageState extends State<LoginPage> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => HomePage()));
                         },
-                        color: Colors.indigo,
+                        color: Colors.blueGrey.shade900,
                         textColor: Colors.white,
                         child: const Text(
                           "Login",

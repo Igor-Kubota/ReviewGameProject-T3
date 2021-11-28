@@ -21,7 +21,7 @@ class _InputFieldState extends State<InputField> {
       child: Material(
         elevation: 5.0,
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        color: Colors.indigo,
+        color: Colors.blueGrey.shade900,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
